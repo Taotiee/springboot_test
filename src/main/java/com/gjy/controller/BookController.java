@@ -3,12 +3,12 @@ package com.gjy.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.gjy.controller.utils.R;
 import com.gjy.domain.Book;
-import com.gjy.service.IBookService;
+import com.gjy.manager.IBookService;
+import com.gjy.service.AaaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/books")
@@ -16,6 +16,8 @@ public class BookController {
 
     @Autowired
     private IBookService bookService;
+    @Autowired
+    private AaaService aaaService;
 
     @GetMapping
     public R getAll() {
@@ -26,6 +28,12 @@ public class BookController {
     public R save(@RequestBody Book book) throws IOException {
         boolean flag = bookService.save(book);
         return new R(flag, flag ? "添加成功" : "添加失败");
+    }
+
+    @PostMapping("/aaa")
+    public String saveAaa(@RequestBody Book book) throws IOException {
+        aaaService.aaa();
+        return "aaa";
     }
 
     @PutMapping
@@ -40,6 +48,7 @@ public class BookController {
 
     @GetMapping("{id}")
     public R getById(@PathVariable Integer id) {
+        System.out.println("getting...");
         return new R(true, bookService.getById(id));
     }
 

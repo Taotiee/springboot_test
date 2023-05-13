@@ -7,6 +7,11 @@ spring:
       url: jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC
       username: root
       password: 383242
+  devtools:
+    restart:
+      # 设置不参与热部署的目录
+      exclude: static/**,public/**,config/application.yml
+#      enabled: false
 mybatis-plus:
   global-config:
     db-config:

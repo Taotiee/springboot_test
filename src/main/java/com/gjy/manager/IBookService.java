@@ -1,4 +1,4 @@
-package com.gjy.service;
+package com.gjy.manager;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;

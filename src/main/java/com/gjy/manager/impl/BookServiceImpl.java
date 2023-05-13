@@ -1,4 +1,4 @@
-package com.gjy.service.impl;
+package com.gjy.manager.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -6,9 +6,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gjy.dao.BookDao;
 import com.gjy.domain.Book;
-import com.gjy.service.IBookService;
+import com.gjy.manager.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 @Service

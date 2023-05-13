@@ -20,7 +20,6 @@ class BookDaoTestCase {
     @Test
     void testGetById() {
         System.out.println(bookDao.selectById(1));
-
     }
 
     @Test
